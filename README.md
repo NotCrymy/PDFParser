@@ -25,23 +25,3 @@ Future updates will include **a graphical user interface (GUI) and advanced expo
   
 Extract text from a PDF :
 python src/main.py
-
-📂 Project Structure
-
-PDFParser/
-│── src/                    # Source code
-│   ├── main.py             # Main entry point
-│   ├── pdf_parser/         # Core logic
-│   ├── export_manager.py   # Handles output files
-│   ├── import_manager.py   # Handles PDF import
-│   ├── error_handler.py    # Manages errors
-│
-│── examples/               # Example usage files
-│   ├── example_usage.py    # Sample script
-│   ├── example.pdf         # Example PDF file
-│
-│── output/                 # Generated output (ignored by Git)
-│── tests/                  # Unit tests (to be implemented)
-│── .gitignore              # Ignored files
-│── README.md               # Project documentation
-│── requirements.txt        # Python dependencies
