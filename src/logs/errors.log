@@ -1,1 +1,2 @@
-2025-02-05 20:08:24,533 - ERROR - [Main.main] Error exporting to TXT: [Errno 2] No such file or directory: 'output/text_output.txt'
+2025-02-05 20:52:39,406 - ERROR - [Main.main] 'ExportManager' object has no attribute 'export_all'
+2025-02-05 20:57:38,082 - ERROR - [Main.main] 'ExportManager' object has no attribute 'export_all'

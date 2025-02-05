@@ -1,24 +1,27 @@
 import os
 import csv
+import shutil
 from pdf_parser.text_output import TextOutput
 from pdf_parser.image_output import ImageOutput
 
 class ExportManager:
     def __init__(self):
         """
-        Initializes the ExportManager with no outputs initially.
+        Initializes the ExportManager with no outputs initially and ensures output directory is clean.
         """
         self.text_outputs = []
         self.image_outputs = []
+        self.output_dir = "output/"  # Central output directory
+        self._purge_output_directory()  # Ensure the directory is empty at initialization
 
-    def _ensure_output_directory(self, file_path: str) -> None:
+    def _purge_output_directory(self) -> None:
         """
-        Ensures that the output directory exists before writing files.
-        :param file_path: Path where the file will be saved.
+        Deletes all existing files and directories inside the output folder.
+        This only runs ONCE when ExportManager is instantiated.
         """
-        output_dir = os.path.dirname(file_path)
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)  # Automatically create output/ directory
+        if os.path.exists(self.output_dir):
+            shutil.rmtree(self.output_dir)  # Delete entire output folder
+        os.makedirs(self.output_dir)  # Recreate it empty
 
     def export_to_txt(self, output_path: str) -> None:
         """
@@ -26,7 +29,6 @@ class ExportManager:
         :param output_path: Path to save the exported TXT file.
         """
         try:
-            self._ensure_output_directory(output_path)
             with open(output_path, 'w', encoding='utf-8') as file:
                 for text_output in self.text_outputs:
                     file.write(text_output.content + "\n\n")
@@ -40,7 +42,6 @@ class ExportManager:
         :param output_path: Path to save the exported CSV file.
         """
         try:
-            self._ensure_output_directory(output_path)
             with open(output_path, 'w', newline='', encoding='utf-8') as file:
                 writer = csv.writer(file)
                 writer.writerow(["Page", "Text Content"])
@@ -56,8 +57,7 @@ class ExportManager:
         :param output_dir: Directory to save the exported images.
         """
         try:
-            if not os.path.exists(output_dir):
-                os.makedirs(output_dir)  # Automatically create output/images/ directory
+            os.makedirs(output_dir, exist_ok=True)  # Ensure the images directory exists
 
             for i, image_output in enumerate(self.image_outputs):
                 for j, image in enumerate(image_output.images):
