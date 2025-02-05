@@ -1,3 +1,4 @@
+import fitz
 from pdf_parser.pdf_file import PDFFile
 from pdf_parser.text_output import TextOutput
 from pdf_parser.image_output import ImageOutput
@@ -14,31 +15,54 @@ class PDFParser:
 
     def parse_text(self) -> TextOutput:
         """
-        Parses the text content from the PDF file.
-        :return: An instance of TextOutput containing the extracted text and page numbers.
+        Extracts text content from each page of the PDF.
+        :return: An instance of TextOutput containing extracted text and page numbers.
         """
-        # Example implementation using dummy data.
-        # Replace this with an actual text extraction library like PyPDF2 or pdfminer.
-        text_content = "Extracted text content from the PDF."
-        page_numbers = [1, 2, 3]  # Example page numbers
-        self.text_output = TextOutput(content=text_content, page_numbers=page_numbers)
-        return self.text_output
+        extracted_text = []
+        page_numbers = []
+
+        try:
+            with fitz.open(self.pdf_file.path) as doc:
+                for page_num, page in enumerate(doc):
+                    text = page.get_text("text")  # Extracts clean, formatted text
+                    if text.strip():  # Avoid empty pages
+                        extracted_text.append(f"Page {page_num + 1}:\n{text}\n")
+                        page_numbers.append(page_num + 1)
+
+            self.text_output = TextOutput(content="\n".join(extracted_text), page_numbers=page_numbers)
+            return self.text_output
+
+        except Exception as e:
+            raise Exception(f"Error while extracting text: {e}")
 
     def parse_images(self) -> ImageOutput:
         """
-        Parses the images from the PDF file.
-        :return: An instance of ImageOutput containing the extracted images and page numbers.
+        Extracts images from the PDF pages.
+        :return: An instance of ImageOutput containing extracted images and page numbers.
         """
-        # Example implementation using dummy data.
-        # Replace this with an actual image extraction library like PyPDF2 or fitz (PyMuPDF).
-        images = [b"image1_data", b"image2_data"]  # Example binary image data
-        page_numbers = [1, 2]  # Example page numbers
-        self.image_output = ImageOutput(images=images, page_numbers=page_numbers)
-        return self.image_output
+        extracted_images = []
+        page_numbers = []
+
+        try:
+            with fitz.open(self.pdf_file.path) as doc:
+                for page_num, page in enumerate(doc):
+                    images = page.get_images(full=True)  # Get all images
+                    for img_index, img in enumerate(images):
+                        xref = img[0]  # Image reference ID
+                        base_image = doc.extract_image(xref)  # Extract raw image
+                        image_bytes = base_image["image"]  # Get image bytes
+                        extracted_images.append(image_bytes)
+                        page_numbers.append(page_num + 1)
+
+            self.image_output = ImageOutput(images=extracted_images, page_numbers=page_numbers)
+            return self.image_output
+
+        except Exception as e:
+            raise Exception(f"Error while extracting images: {e}")
 
     def generate_outputs(self) -> None:
         """
-        Generates both text and image outputs by parsing the PDF file.
+        Parses both text and images from the PDF and stores them in respective output objects.
         """
         self.parse_text()
         self.parse_images()

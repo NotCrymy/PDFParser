@@ -1,3 +1,4 @@
+import os
 from pdf_parser.pdf_file import PDFFile
 
 class ImportManager:
@@ -7,34 +8,43 @@ class ImportManager:
         """
         self.file = None
 
-    def import_file(self, pdf_path: str) -> PDFFile:
+    def import_file(self, pdf_path: str = None) -> PDFFile:
         """
-        Imports a PDF file by creating a PDFFile object and validating it.
-        :param pdf_path: Path to the PDF file to be imported.
+        Imports a PDF file by asking the user for a path (if not provided).
+        :param pdf_path: Optional, path to the PDF file.
         :return: An instance of the PDFFile class.
         :raises FileNotFoundError: If the file is not found.
         :raises ValueError: If the file is not a valid PDF.
         """
-        self.file = PDFFile(pdf_path)
-        self.file.load_file()
-        if not self.file.validate_file():
-            raise ValueError(f"The file at '{pdf_path}' is not a valid PDF.")
-        return self.file
+        if not pdf_path:
+            pdf_path = self._get_user_input()
 
-    def validate_file(self) -> bool:
-        """
-        Validates the associated PDF file.
-        :return: True if the file is valid, False otherwise.
-        :raises ValueError: If no file is loaded.
-        """
-        if not self.file:
-            raise ValueError("No file has been imported.")
-        return self.file.validate_file()
+        # Verify the file exists
+        if not os.path.exists(pdf_path):
+            raise FileNotFoundError(f"Error: The file '{pdf_path}' was not found.")
 
-    def report_error(self, error: str) -> None:
+        # Verify it's a PDF file
+        if not pdf_path.lower().endswith(".pdf"):
+            raise ValueError("Error: The selected file is not a valid PDF.")
+
+        try:
+            # Create PDFFile instance
+            self.file = PDFFile(pdf_path)
+            self.file.load_file()
+            print(f"Successfully imported: {pdf_path}")
+            return self.file
+
+        except Exception as e:
+            raise Exception(f"Error importing PDF file: {e}")
+
+    def _get_user_input(self) -> str:
         """
-        Reports an error encountered during the import process.
-        :param error: Description of the error to be reported.
+        Prompts the user to enter a valid PDF file path.
+        :return: The selected file path.
         """
-        # For now, just print the error. This can be extended to log errors.
-        print(f"ImportManager Error: {error}")
+        while True:
+            pdf_path = input("Enter the path to the PDF file: ").strip()
+            if os.path.exists(pdf_path) and pdf_path.lower().endswith(".pdf"):
+                return pdf_path
+            else:
+                print("Invalid file. Please enter a valid PDF file path.")
