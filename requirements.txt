@@ -1,0 +1,11 @@
+# PDF processing library
+pymupdf==1.21.0
+
+# CSV handling (standard but explicit)
+pandas==2.0.3
+
+# Error handling and logging (optional, but useful)
+loguru==0.7.0
+
+# Testing framework (if we use pytest)
+pytest==7.4.0
