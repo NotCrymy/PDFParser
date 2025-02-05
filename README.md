@@ -18,7 +18,7 @@ Future updates will include **a graphical user interface (GUI) and advanced expo
 ## 🚀 Installation
 ### **Prerequisites**
 - **Python 3.8+** installed  
-- Install required dependencies (coming soon) :
+- Install required dependencies :
   ```bash
   pip install -r requirements.txt
 
