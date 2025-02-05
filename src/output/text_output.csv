@@ -1,159 +1,135 @@
 Page,Text Content
 N/A,"Page 1:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+1 
  
+Ce document est la transcription révisée, chapitrée et illustrée d’une vidéo du MOOC UVED 
+« Causes et enjeux du changement climatique ». Ce n’est pas un cours écrit au sens propre du 
+terme ; le choix des mots et l'articulation des idées sont propres aux interventions orales des 
+auteurs. 
+Le système climatique : échelles 
+d’espace et échelles de 
+temps 
+Hervé LE TREUT 
+Directeur de l’Institut Pierre Simon Laplace 
+Quand on parle de changement climatique, on va nécessairement parler d’échelles de temps 
+du système climatique. Ces échelles de temps du système climatique sont très diverses parce 
+que le système climatique est lui-même fait de composantes qui sont très diverses.  
+1. Composantes du système climatique 
+L'élément central dans le système climatique est l'atmosphère. C’est celui de ces systèmes qui 
+change le plus rapidement. La vitesse moyenne de l'écoulement atmosphérique c’est 10 m/s, 
+c'est suffisant pour mélanger l'atmosphère à l'échelle de quelques semaines, de quelques 
+mois, si on regarde les deux hémisphères. L'atmosphère, de ce point de vue-là distribue les 
+climats à l'échelle de la planète, c'est donc le premier facteur qui module climat. 
  
- 
-PDF Bookmark Sample 
-Page 1 of 4 
- 
-PDF BOOKMARK SAMPLE 
- 
-Sample Date: 
-May 2001 
-Prepared by: 
-Accelio Present Applied Technology 
-Created and Tested Using: 
-• 
-Accelio Present Central 5.4 
-• 
-Accelio Present Output Designer 5.4 
-Features Demonstrated: 
-• 
-Primary bookmarks in a PDF file. 
-• 
-Secondary bookmarks in a PDF file. 
-Overview 
-This sample consists of a simple form containing four distinct fields. The data file contains eight 
-separate records. 
-By default, the data file will produce a PDF file containing eight separate pages. The selective 
-use of the bookmark file will produce the same PDF with a separate pane containing 
-bookmarks. This screenshot of the sample output shows a PDF file with bookmarks. 
- 
-The left pane displays the available bookmarks for this PDF. You may need to enable the 
-display of bookmarks in Adobe Acrobat Reader by clicking Window > Show Bookmarks. 
-Selecting a date from the left pane displays the corresponding page within the document. 
-Note that the index has been sorted according to the specification in the bookmark file, and that 
-pages within the file are created according to the original order in the data file. 
 
 
 Page 2:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+2 
  
- 
- 
-PDF Bookmark Sample 
-Page 2 of 4 
- 
-Sample Data File 
-^reformat trunc
-^symbolset WINLATIN1
-^field trans_date
-2000-01-1
-^field description
-Description for item #1
-^field trans_type
-TYPE1
-^field trans_amount
-11.00
-^page 1
-^field trans_date
-2000-01-2
-^field description
-Description for item #2
-^field trans_type
-TYPE2
-^field trans_amount
-11.00
-^page 1
-^field trans_date
-2000-01-3
-^field description
-Description for item #3
-^field trans_type
-TYPE3
- 
-Sample Bookmark File 
-[invoices]
-Invoices by Date=0
-trans_date=1,A
-[type]
-Invoices by Item Type=0
-trans_type=1,A
-[amount]
-Invoices by Transaction Amount=0
-trans_amount=1,D
-The example bookmark file includes three distinct sections: 
-• 
-Invoices sorted, ascending, by date. 
-• 
-Invoices sorted, ascending, by item type. 
-• 
-Invoices sorted, descending, by transaction amount. 
+Mais l’atmosphère a peu de mémoire. La mémoire essentielle est dans l'océan. L’océan se 
+déplace à des vitesses qui sont beaucoup plus faibles, souvent sous l'influence de 
+l'atmosphère, peut-être de manière cent fois plus lente que l'atmosphère. C’est un géant 
+tranquille qui peut s'animer de temps en temps et qui va agir sur le climat plutôt comme un 
+métronome, un gardien du temps comparé à l'atmosphère. On a d'autres composantes qui 
+elles ont des échelles de temps bien supérieures : les glaciers qui sont là depuis des millions 
+d'années très souvent, le sol, des rivières. On a toute une série de composantes qui peuvent 
+avoir des vitesses extrêmement différentes. Tout ça s'anime au fil du temps. On sait qu'on a 
+des échelles de temps, comme pour les grandes glaciations, qui se situent à l'échelle des 
+centaines de milliers d'années, des dizaines de milliers d'années. Avant cela, on a une histoire 
+de la planète qui couvre des centaines de millions d'années avec la dérive des continents. On 
+a une histoire extrêmement riche. 
+2. De l’holocène à aujourd’hui 
+On met en évidence un contraste majeur entre une période où se sont développées nos 
+civilisations, qui est très stable en fait en termes climatiques, et la période actuelle. On la décrit 
+ici par trois paramètres qui sont trois gaz à effet de serre très importants : le CO2, le méthane 
+et le protoxyde d’azote (figure ci-dessous).  
 
 
 Page 3:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+3 
  
- 
- 
-PDF Bookmark Sample 
-Page 3 of 4 
- 
-Sample Files 
-This sample package contains: 
- 
-Filename 
-Description 
-ap_bookmark.IFD 
-The template design. 
-ap_bookmark.mdf 
-The template targeted for PDF output. 
-ap_bookmark.dat 
-A sample data file in DAT format. 
-ap_bookmark.bmk 
-A sample bookmark file. 
-ap_bookmark.pdf 
-Sample PDF output. 
-ap_bookmark_doc.pdf 
-A document describing the sample. 
-Deploying the Sample 
-To deploy this sample in your environment: 
-1. Open the template design ap_bookmark.IFD in Output Designer and recompile the 
-template for the appropriate presentment target. 
-2. Modify the -z option in the ^job command in the data file ap_bookmark.dat to: 
-• 
-Identify the target output device. 
-• 
-Identify the bookmark file using the -abmk command. 
-• 
-Identify the section for which to generate bookmarks, if desired, using the -abms 
-command. 
-For example, 
- 
-To bookmark by …  
-Use the command line parameter …  
-Invoices 
--abmkap_bookmark.bmk -abmsinvoices
-Type 
--abmkap_bookmark.bmk -abmstype
-Amount 
--abmkap_bookmark.bmk -abmsamount
+On voit que sur 10 000 ans, le temps où se sont développées nos civilisations, c’est une 
+période très chaude dans l'histoire de la planète. Ces gaz ont peu évolué. A la fin de cette 
+période, on voit au contraire une croissance extrêmement rapide de ces gaz à effet de serre. 
+Ces gaz ont une croissance qu’on associe souvent avec le début de l'ère industrielle. En fait, 
+on est dans un système d'évolution qui est encore plus récent que cela. Ce que montrent les 
+petits encadrés gris, c'est que cette augmentation des gaz à effet de serre est postérieure à la 
+Deuxième guerre mondiale. Cela s'explique parfaitement par, par exemple, les inventaires de 
+combustion du charbon, du gaz naturel, du pétrole tels que peut les donner l'Agence 
+Internationale pour l'Energie. On voit que le moment où tout cela augmente, le moment où 
+tout cela s'emballe, c'est après la Deuxième guerre mondiale. On a un système qui s’est mis à 
+évoluer très rapidement depuis cette époque-là. 
 
 
 Page 4:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+4 
  
+Si on s'en tient à ce seul niveau d'émission du CO2 liée aux activités humaines, liée à la 
+combustion des produits fossiles, on était en début de la période concernée, c'est-à-dire dans 
+les années 50 à 1 ou 2 milliards de tonnes de carbone par an, on est passé à 6 ou 7 milliards 
+de tonnes de carbone sur le premier de ces deux diagrammes que j'ai mis ensemble (figure ci-
+dessus), qui en fait nous amène à la conférence de Rio en 1992. Rio est la première conférence 
+où on a essayé de mettre en place une convention cadre des Nations Unies sur le changement 
+climatique pour aussi pour essayer de réduire ces émissions. On voit qu'on n’y est pas arrivés 
+et que depuis, on a continué à augmenter ces émissions qui sont maintenant à 10 milliards de 
+tonnes de carbone par an. Donc, au sein d'un climat qui finalement a évolué à des échelles de 
+temps très longues, on a créé un espace de variations extrêmement rapides comparé à un 
+temps qui était relativement stable, qui est celui de nos civilisation et des 10 000 dernières 
+années relativement chaudes dans lesquelles on a vécu. 
+3. Echelles d’organisation 
+Ce temps rapide des changements va s'articuler avec une géographie de ces changements. On 
+a un système qui est particulier parce qu’il est très largement tributaire de ce qui se passe 
+dans le domaine atmosphérique. Une des caractéristiques de l'atmosphère est d'avoir une 
+circulation qui est partiellement organisée et partiellement imprédictible. 
+
+
+Page 5:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+5 
  
+Cette organisation se voit sur la carte ci-dessus qui est une image radar instantanée de 
+l’atmosphère, et qui est issue d'un programme de la NASA pour mesurer les précipitations 
+depuis l'espace.  Près de l'Équateur on a par exemple ce qu'on appelle le pot-au-noir, ici en 
+blanc. Ce sont des grands cumulo-nimbus qui marquent la ceinture équatoriale. A nos 
+latitudes, on voit surtout des grands tourbillons qui sont des tourbillons autour des 
+dépressions ou des anticyclones, et ils sont tous organisés à l'échelle des milliers de 
+kilomètres donc on voit que l'atmosphère ne fonctionne pas de manière complètement 
+chaotique. On pourra prévoir un certain nombre de choses mais on sait aussi que les 
+prévisions météo sont limitées dans le temps à quelques jours. La capacité à faire des 
+prévisions détaillées sera donc malgré tout limitée quand on s’intéressera aux dimensions 
+régionales du changement. On a un peu la même situation dans l'océan. L'océan est organisé 
+à très grande échelle, alors beaucoup par la forme des bassins océaniques. Vous avez sur la 
+figure ci-dessous par exemple le Gulf Stream. Le Gulf Stream s'appuie sur le bord ouest de 
+l'océan atlantique, c'est-à-dire sur la côte est des États-Unis. Il amène depuis le Golfe du 
+Mexique jusqu'à l’Arctique à la fois des eaux chaudes et des eaux salées qui vont plonger, qui 
+vont mettre en route des circulations océaniques très précieuses. 
+
+
+Page 6:
+MOOC UVED Climat  –  Le système climatique : échelles d’espace et échelles de temps 
+6 
  
-PDF Bookmark Sample 
-Page 4 of 4 
+On sait que si le climat change, si on a plus d'eau douce dans les hautes latitudes de l'océan 
+Atlantique, ce Gulf Stream risque de reculer vers le sud. On sait dire un certain nombre de 
+choses sur les évolutions possibles de la circulation océanique. En même temps, on voit que 
+cette circulation océanique, s'accompagne d'une série de tourbillons absolument 
+considérables. Ces petits tourbillons sont des tourbillons qui sont un peu l'équivalent 
+océanique de nos dépressions et de nos anticyclones. On ne les connaissait pas il y a quelques 
+décennies, c'est là aussi l'observation spatiale qui nous les montre (là ce sont des simulations 
+numériques qui permettent de les visualiser de manière peut-être plus illustrée et plus 
+imagée). 
+4. Conclusion 
+Le grand enjeu auquel on a à faire face en tant que société, c'est justement d'arriver à 
+déchiffrer ce que sera le futur dans un monde qu'on est en train de secouer de manière très 
+rapide par rapport à tous ces évolutions naturelles et dans lequel beaucoup d'éléments sont 
+prévisibles mais beaucoup d'éléments ne seront pas prévisibles ? Cela veut dire qu'on sera 
+obligés de les traiter comme des risques climatiques et ces risques climatiques sont 
+maintenant une composante importante du paysage politique et avec lequel on doit affronter 
+le futur. 
  
-3. Place the accompanying files in directories consistent with your implementation: 
-• 
-Place ap_bookmark.IFD in the Designs subdirectory for Output Designer. 
-• 
-Place ap_bookmark.mdf in the forms subdirectory accessible to Central. 
-• 
-Place ap_bookmark.bmk in an addressable directory. 
-Running the Sample 
-• 
-To run this sample, place ap_bookmark.dat in the collector directory scanned by Central. 
 
 "

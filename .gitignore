@@ -18,6 +18,3 @@ venv/
 
 # Ignore test and debug cache files
 tests/.pytest_cache/
-
-# Ignore Draw.io files
-PDFParserXML.drawio
