@@ -1,0 +1,23 @@
+# Ignore log files and output directories
+src/logs/
+output/
+
+# Ignore editor and system-specific files
+*.log
+*.DS_Store
+Thumbs.db
+
+# Ignore Python dependency files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+venv/
+.env/
+
+# Ignore test and debug cache files
+tests/.pytest_cache/
+
+# Ignore Draw.io files
+PDFParserXML.drawio
