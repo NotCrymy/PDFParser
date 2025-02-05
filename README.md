@@ -22,6 +22,8 @@ Future updates will include **a graphical user interface (GUI) and advanced expo
   ```bash
   pip install -r requirements.txt
 
-  
-Extract text from a PDF :
-python src/main.py
+---
+
+## 📂 Extract text from a PDF :
+```bash
+  python src/main.py
