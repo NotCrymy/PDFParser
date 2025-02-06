@@ -1,6 +1,7 @@
 # Ignore log files and output directories
 src/logs/
 output/
+src/pdf_parser/__pycache__/
 
 # Ignore editor and system-specific files
 *.log
