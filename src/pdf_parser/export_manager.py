@@ -36,21 +36,6 @@ class ExportManager:
         except Exception as e:
             raise Exception(f"Error exporting to TXT: {e}")
 
-    def export_to_csv(self, output_path: str) -> None:
-        """
-        Exports the text outputs to a CSV file.
-        :param output_path: Path to save the exported CSV file.
-        """
-        try:
-            with open(output_path, 'w', newline='', encoding='utf-8') as file:
-                writer = csv.writer(file)
-                writer.writerow(["Page", "Text Content"])
-                for text_output in self.text_outputs:
-                    writer.writerow(["N/A", text_output.content])  # No pagination
-            print(f"Text successfully exported to {output_path}")
-        except Exception as e:
-            raise Exception(f"Error exporting to CSV: {e}")
-
     def export_images(self, output_dir: str) -> None:
         """
         Exports the extracted images to the specified directory.

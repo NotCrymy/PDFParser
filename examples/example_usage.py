@@ -57,7 +57,6 @@ def run_example():
         export_manager.image_outputs.append(image_output)
 
         export_manager.export_to_txt(os.path.join(output_dir, "text_output.txt"))
-        export_manager.export_to_csv(os.path.join(output_dir, "text_output.csv"))
         export_manager.export_images(os.path.join(output_dir, "images"))
 
         print(f"\nExport completed. Check the '{output_dir}/' directory.")

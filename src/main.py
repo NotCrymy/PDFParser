@@ -3,6 +3,36 @@ from pdf_parser.import_manager import ImportManager
 from pdf_parser.pdf_parser import PDFParser
 from pdf_parser.export_manager import ExportManager
 from pdf_parser.error_handler import ErrorHandler
+from gui.pdf_parser_app import PDFParserApp
+
+"""
+===================================================
+    PDFParser - Main Entry Point
+===================================================
+
+This script serves as the main entry point for the PDFParser application.
+It initializes the graphical user interface (GUI) and provides a command-line
+alternative for parsing and exporting PDF content.
+
+Features:
+- Imports a PDF file and extracts text and images.
+- Exports extracted data as TXT and PNG files.
+- Handles errors and logs them if encountered.
+- Launches the graphical interface for user interaction.
+
+Usage:
+- Run this script to launch the application:
+    python main.py
+-- You may only want to run it in command line, in this case call main() in the "__name__" var --
+
+Dependencies:
+- Ensure all required modules are installed using:
+    pip install -r requirements.txt
+
+Author: Clement
+Date project started: 06/02/2025
+===================================================
+"""
 
 def main():
     print("Starting PDF parsing...")
@@ -32,7 +62,6 @@ def main():
 
         print(f"Exporting files to: {os.path.abspath('output/')}")
         export_manager.export_to_txt("output/text_output.txt")
-        export_manager.export_to_csv("output/text_output.csv")
         export_manager.export_images("output/images")
 
         print("Export completed. Check the 'output/' directory.")
@@ -47,4 +76,5 @@ def main():
             print(f"  - {err}")
 
 if __name__ == "__main__":
-    main()
+    app = PDFParserApp()
+    app.run()
