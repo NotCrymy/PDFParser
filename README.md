@@ -25,5 +25,19 @@ Future updates will include **Improvment of  graphic interface, more export form
 ---
 
 ## 📂 Extract text from a PDF :
-```bash
+  ```bash
   python src/main.py
+
+---
+
+## 📄 Extra note :
+Why did I created this tool ?
+
+I developed this tool to reduce the size of PDF files and make them more suitable for use with AI LLM models.
+
+Large PDF documents often contain extraneous formatting, images, and metadata that are unnecessary for AI processing. By extracting and converting them into plain text (TXT),
+this tool optimizes the input for AI models, preventing context overflow and improving processing efficiency.
+
+This approach allows AI models to retain more relevant information within their context window, making them more effective at analyzing and understanding large volumes of text.
+
+Eventually you also want them to analyse images so I add that to the tool too
