@@ -1,17 +1,17 @@
 # 📄 PDFParser - Open Source PDF Extraction Tool
 
 **PDFParser** is a free and open-source software designed to extract **text** and **images** from PDF files.  
-It is built using **Python** and provides multiple export formats (**TXT, CSV, PNG**).  
-Future updates will include **a graphical user interface (GUI) and advanced export options**.
+It is built using **Python** and provides multiple export formats (**TXT - PNG**).  
+Future updates will include **Improvment of  graphic interface, more export format and multiple export**.
 
 ---
 
 ## ✨ Features
 ✔ Extract **text** from PDFs  
 ✔ Extract **images** from PDFs  
-✔ Export results as **TXT, CSV, or images**  
+✔ Export results as **TXT or images**  
 ✔ Handle errors and corrupted PDFs gracefully  
-✔ Fully **command-line based** (GUI planned for future versions)  
+✔ Working with GUI and in command line 
 
 ---
 
