@@ -21,12 +21,14 @@ Future updates will include **Improvment of  graphic interface, more export form
 - Install required dependencies :
   ```bash
   pip install -r requirements.txt
+  ```
 
 ---
 
 ## 📂 Extract text from a PDF :
   ```bash
   python src/main.py
+  ```
 
 ---
 
