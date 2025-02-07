@@ -42,4 +42,4 @@ this tool optimizes the input for AI models, preventing context overflow and imp
 
 This approach allows AI models to retain more relevant information within their context window, making them more effective at analyzing and understanding large volumes of text.
 
-Eventually you also want them to analyse images so I add that to the tool too
+Eventually, you might also want them to analyze images alongside the text. For this reason, I added image extraction capabilities to the tool as well.
