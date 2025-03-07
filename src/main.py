@@ -1,10 +1,3 @@
-import os
-from pdf_parser.import_manager import ImportManager
-from pdf_parser.pdf_parser import PDFParser
-from pdf_parser.export_manager import ExportManager
-from pdf_parser.error_handler import ErrorHandler
-from gui.pdf_parser_app import PDFParserApp
-
 """
 ===================================================
     PDFParser - Main Entry Point
@@ -33,6 +26,14 @@ Author: Clement
 Date project started: 06/02/2025
 ===================================================
 """
+
+import os
+from pdf_parser.import_manager import ImportManager
+from pdf_parser.pdf_parser import PDFParser
+from pdf_parser.export_manager import ExportManager
+from pdf_parser.error_handler import ErrorHandler
+from gui.pdf_parser_app import PDFParserApp
+
 
 def main():
     print("Starting PDF parsing...")
