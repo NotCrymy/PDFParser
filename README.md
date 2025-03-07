@@ -11,7 +11,7 @@ Future updates will include **Improvment of  graphic interface, more export form
 ✔ Extract **images** from PDFs  
 ✔ Export results as **TXT or images**  
 ✔ Handle errors and corrupted PDFs gracefully  
-✔ Working with GUI and in command line 
+✔ Working with GUI and in command line  
 ✔ Now able to parse multiple PDF files
 
 ---
