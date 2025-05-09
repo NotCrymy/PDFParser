@@ -1,10 +1,12 @@
 # PDF processing library
 pymupdf==1.21.0 
+tools==1.0.2
 
 # Error handling and logging
 loguru==0.7.0
 
 # GUI library (Tkinter is built-in with Python)
+customtkinter==5.2.0
 
 # Testing framework (if needed for unit tests)
 pytest==7.4.0 

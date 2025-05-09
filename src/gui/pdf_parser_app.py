@@ -28,6 +28,7 @@ Date project started: 06/02/2025
 
 import tkinter as tk
 from tkinter import filedialog, messagebox
+import customtkinter as ctk
 from pdf_parser.import_manager import ImportManager
 from pdf_parser.pdf_parser import PDFParser
 from pdf_parser.export_manager import ExportManager
@@ -38,50 +39,68 @@ class PDFParserApp:
         """
         Initializes the main application window with single and multi-file parsing options.
         """
-        self.window = tk.Tk()
+        ctk.set_appearance_mode("System")  # Light, Dark or System
+        ctk.set_default_color_theme("blue")  # Optional: blue, green, dark-blue, etc.
+
+        self.window = ctk.CTk()
         self.window.title("PDF Parser Application")
         self.window.geometry("800x600")
 
         # Left Frame (For file selection)
-        self.left_frame = tk.Frame(self.window, width=300, bg="#f0f0f0")
+        self.left_frame = ctk.CTkFrame(self.window, width=300)
         self.left_frame.pack(side=tk.LEFT, fill=tk.Y)
 
         # Right Frame (For export options)
-        self.right_frame = tk.Frame(self.window, bg="#ffffff")
+        self.right_frame = ctk.CTkFrame(self.window)
         self.right_frame.pack(side=tk.RIGHT, expand=True, fill=tk.BOTH)
 
         # Left Frame Widgets (File Selection)
-        self.single_file_button = tk.Button(
-            self.left_frame, text="Select a PDF file (Replace)", 
-            command=self.open_single_pdf, bg="#4CAF50", fg="white", 
-            font=("Arial", 12)
+        self.single_file_button = ctk.CTkButton(
+            self.left_frame, 
+            text="Select a PDF file (Replace)", 
+            command=self.open_single_pdf,
+            fg_color="#4CAF50",  # Equivalent to bg
+            text_color="white",  # Equivalent to fg
+            font=ctk.CTkFont("Arial", 12)
         )
         self.single_file_button.pack(pady=10, padx=20, fill=tk.X)
 
-        self.multi_file_button = tk.Button(
-            self.left_frame, text="Select multiple PDFs", 
-            command=self.open_multiple_pdfs, bg="#FF9800", fg="white", 
-            font=("Arial", 12)
+        self.multi_file_button = ctk.CTkButton(
+            self.left_frame, 
+            text="Select multiple PDFs", 
+            command=self.open_multiple_pdfs,
+            fg_color="#FF9800", 
+            text_color="white",
+            font=ctk.CTkFont("Arial", 12)
         )
         self.multi_file_button.pack(pady=10, padx=20, fill=tk.X)
 
-        self.clear_button = tk.Button(
-            self.left_frame, text="Clear loaded files", 
-            command=self.clear_previous_data, bg="#D32F2F", fg="white", 
-            font=("Arial", 12)
+        self.clear_button = ctk.CTkButton(
+            self.left_frame, 
+            text="Clear loaded files", 
+            command=self.clear_previous_data,
+            fg_color="#D32F2F", 
+            text_color="white",
+            font=ctk.CTkFont("Arial", 12)
         )
         self.clear_button.pack(pady=10, padx=20, fill=tk.X)
 
         # Right Frame Widgets (Export)
-        self.export_images_button = tk.Button(
-            self.right_frame, text="Export images to PNG", 
-            command=self.export_images, bg="#2196F3", fg="white", 
-            font=("Arial", 12)
+        self.export_images_button = ctk.CTkButton(
+            self.right_frame, 
+            text="Export images to PNG", 
+            command=self.export_images,
+            fg_color="#2196F3", 
+            text_color="white",
+            font=ctk.CTkFont("Arial", 12)
         )
-        self.export_text_button = tk.Button(
-            self.right_frame, text="Export to TXT", 
-            command=self.export_text, bg="#FF5722", fg="white", 
-            font=("Arial", 12)
+        self.export_text_button = ctk.CTkButton(
+            self.right_frame, 
+            text="Export to TXT", 
+            command=self.export_text,
+            fg_color="#FF5722", 
+            text_color="white",
+            font=ctk.CTkFont("Arial", 12)
         )
 
         # Core Components
